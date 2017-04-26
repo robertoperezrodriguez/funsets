@@ -19,14 +19,23 @@ object FunSets {
   /**
    * Returns the set of the one given element.
    */
-    def singletonSet(elem: Int): Set = ???
-  
+    def singletonSet(elem: Int): Set = {
+      def returnFunction(elem: Int)(input: Int): Boolean = {
+        if (input == elem) true else false
+      }
+      return returnFunction(elem)
+    }
 
   /**
    * Returns the union of the two given sets,
    * the sets of all elements that are in either `s` or `t`.
    */
-    def union(s: Set, t: Set): Set = ???
+    def union(s: Set, t: Set): Set = {
+      def returnFunction(a: Set)(b: Set)(elem: Int): Boolean = {
+        return a(elem) | b(elem)
+      }
+      return returnFunction(s)(t)
+    }
   
   /**
    * Returns the intersection of the two given sets,
